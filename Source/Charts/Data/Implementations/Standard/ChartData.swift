@@ -94,6 +94,10 @@ open class ChartData: NSObject
             _leftAxisMax = firstLeft!.yMax
             _leftAxisMin = firstLeft!.yMin
             
+            if(_leftAxisMax == 9999999999){
+ +                _leftAxisMax = 0;
+ +            }
+            
             for dataSet in _dataSets
             {
                 if dataSet.axisDependency == .left
@@ -105,7 +109,9 @@ open class ChartData: NSObject
                     
                     if dataSet.yMax > _leftAxisMax
                     {
-                        _leftAxisMax = dataSet.yMax
+                        if(dataSet.yMax != 9999999999){
+ +                            _leftAxisMax = dataSet.yMax
+ +                      }
                     }
                 }
             }
