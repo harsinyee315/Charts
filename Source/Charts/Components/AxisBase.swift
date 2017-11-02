@@ -151,6 +151,12 @@ open class AxisBase: ComponentBase
             return ""
         }
         
+        if ((valueFormatter as? NumberFormatter) != nil){
+ +            let numberFormatter = valueFormatter as! NumberFormatter
+ +            return  numberFormatter.string(from: NSNumber(value: entries[index]))!
+ +            
+ +      }
+        
         return valueFormatter?.stringForValue(entries[index], axis: self) ?? ""
     }
     
