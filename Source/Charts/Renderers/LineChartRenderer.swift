@@ -402,6 +402,10 @@ open class LineChartRenderer: LineRadarRenderer
                     
                     if e1 == nil || e2 == nil { continue }
                     
+                     if(e1.y == 9999999999.0 || e2.y == 9999999999.0){
+ +                        continue
+ +                    }
+                    
                     let pt = CGPoint(
                         x: CGFloat(e1.x),
                         y: CGFloat(e1.y * phaseY)
