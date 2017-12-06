@@ -157,7 +157,6 @@ open class CombinedChartData: BarLineScatterCandleBubbleChartData
                 _rightAxisMin = data._rightAxisMin
             }
         }
-        }
     }
     
     /// - returns: All data objects in row: line-bar-scatter-candle-bubble if not null.
